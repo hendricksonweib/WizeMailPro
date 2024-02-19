@@ -14,6 +14,10 @@
 - [Contribuição](#contribuição)
 - [Licença](#licença)
 
+
+## ✏️ Figma
+- [Prototipo no figma](https://www.figma.com/file/zvFIgTYMpaz9TxOXQHw6Ug/WISE-MAIL-PRO?type=design&node-id=2-21040&mode=design&t=HqzPNPh1hsb4So5D-0)
+
 ## 🚀 Instalação
 
 Abra o visual code studio e no terminal baixe as dependendias
