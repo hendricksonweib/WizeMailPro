@@ -258,37 +258,39 @@
         <div class="card z-index-0 mt-12">
           
         </div>
-        <div class="container">
+        <div class="container position-relative">
           <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
               <div class="card z-index-0">
                 <div class="card-header text-center pt-4">
                   <h5>Cadastrar usuário</h5>
-                  <button id="closeButton" class="btn btn-close" aria-label="Close">x</button>
+                  <div class="position-absolute top-0 end-0">
+                    <button id="closeButton" class="btn btn-close" aria-label="Close">x</button>
+                  </div>
                 </div>
                 <div class="card-body">
                   <form role="form">
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="Nome" aria-label="Name">
+                      <input type="text" class="form-control" id="name" placeholder="Nome" aria-label="Name">
                     </div>
                     <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                      <input type="email" class="form-control" id="email" placeholder="Email" aria-label="Email">
                     </div>
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="Setor" aria-label="Setor">
+                      <input type="text" class="form-control" id="setor" placeholder="Setor" aria-label="Setor">
                     </div>
                     <div class="mb-3">
-                      <input type="password" class="form-control" placeholder="Senha" aria-label="Password">
+                      <input type="password" class="form-control" id="senha" placeholder="Senha" aria-label="Password">
                     </div>
                     <div class="text-center">
-                      <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Cadastrar</button>
+                      <button type="button" id="cadastrar" class="btn bg-gradient-dark w-100 my-4 mb-2">Cadastrar</button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>      
       </div>
     </div>
   </main>
@@ -337,6 +339,63 @@
       floatingForm.style.display = "none";
     });
 });
+
+const name = document.getElementById('name')
+const email = document.getElementById('email')
+const setor = document.getElementById('setor')
+const senha = document.getElementById('senha')
+const cadastrar = document.getElementById('cadastrar')
+
+document.addEventListener('DOMContentLoaded', function(){
+  cadastrar.addEventListener('click',function(){
+    verificar()
+  })
+})
+
+function verificar() {
+  if (name.value !== "" || email.value !== "" || setor.value !== "" || senha.value !== "") {
+    validarCampos();
+  } else {
+    alert("Preencha todos os campos");
+  }
+  if (name.value !== "" && email.value !== "" && setor.value !== "" && senha.value !== "") {
+    floatingForm.style.display = "none";
+    const listaUser = JSON.parse(localStorage.getItem('listaUser')|| '[]')
+
+    listaUser.push(
+      {
+      nameCad: name.value,
+      emailCad:email.value,
+      setorCad: setor.value,
+      senhaCad: senha.value
+    }
+    )
+localStorage.setItem('listaUser', JSON.stringify(listaUser))
+
+    alert('cadastrado com sucesso')
+
+  }
+}
+
+function validarCampos() {
+  switch(true) {
+    case name.value === "":
+      alert('Preencha seu nome');
+      break;
+    case email.value === "":
+      alert('Preencha seu email');
+      break;
+    case setor.value === "":
+      alert('Preencha seu setor');
+      break;
+    case senha.value === "":
+      alert('Preencha sua senha');
+      break;
+    default:
+      break;
+  }
+}
+
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
