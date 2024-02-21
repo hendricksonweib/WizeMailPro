@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3178/3178158.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>
+    Wize Mall Pro
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../../assets/css/argon-dashboard.css?v=2.0.5" rel="stylesheet" />
+</head>
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300 position-absolute w-100 d-flex justify-content-center align-items-start" style="background-color: #172B4D;">
+    <img src="../html/img/logoEquatorial.svg" alt="" style="max-width: 400px; max-height: 200px; margin-top: 10px;">
+</div>
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+  <div class="sidenav-header d-flex justify-content-center">
+      <img src="../html/img/LogoWMP.svg" alt="" style="max-width: 100px; max-height: 100px;">
+  </div>
+  <hr class="horizontal dark mt-0">
+  <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="administrativo.html" class="nav-link " aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+          <div class=" f text-center d-flex align-items-center justify-content-center">
+            <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Dashboards</span>
+        </a>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" href="#pagesExamples" class="nav-link " aria-controls="pagesExamples" role="button" aria-expanded="false">
+          <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+            <i class="ni ni-ungroup text-warning text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Entrada</span>
+        </a>
+        <div class="collapse " id="pagesExamples">
+          <ul class="nav ms-4">
+            <li class="nav-item ">
+              <a class="nav-link " href="home.html">
+                <span class="sidenav-normal"> Caixa de entrada </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/pages/pricing-page.html">
+                <span class="sidenav-normal"> Lidas </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/pages/rtl-page.html">
+                <span class="sidenav-normal"> Não Lidas </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/pages/widgets.html">
+                <span class="sidenav-normal"> Em Atraso </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/pages/charts.html">
+                <span class="sidenav-normal"> Em Tratamento </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link active" aria-controls="applicationsExamples" role="button" aria-expanded="false">
+          <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+            <i class="ni ni-ui-04 text-info text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Enviados</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" href="#ecommerceExamples" class="nav-link " aria-controls="ecommerceExamples" role="button" aria-expanded="false">
+          <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+            <span class="glyphicon glyphicon-tag"></span>
+          </div>
+          <span class="nav-link-text ms-1">Classificação</span>
+        </a>
+        <div class="collapse " id="ecommerceExamples">
+          <ul class="nav ms-4">
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/ecommerce/overview.html">
+                <span class="sidenav-normal"> Emergência </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/ecommerce/referral.html">
+                <span class="sidenav-normal"> Urgente </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/ecommerce/referral.html">
+                <span class="sidenav-normal"> Não Urgente </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" href="#authExamples" class="nav-link " aria-controls="authExamples" role="button" aria-expanded="false">
+          <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+            <i class="fa fa-share" style="font-size:15px;color:rgb(0, 0, 0)"></i>      
+          </div>
+          <span class="nav-link-text ms-1">Encaminhados</span>
+        </a>
+        <div class="collapse " id="authExamples">
+          <ul class="nav ms-4">
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/ecommerce/referral.html">
+                <span class="sidenav-normal"> Corporativo </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/ecommerce/referral.html">
+                <span class="sidenav-normal"> Comercial </span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="../../pages/ecommerce/referral.html">
+                <span class="sidenav-normal"> Reclamação </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</aside>
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg  px-0 mx-4 shadow-none border-radius-xl z-index-sticky " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm">
+              <a class="text-white" href="javascript:;">
+                <i class="ni ni-box-2"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Caixa de entrada</li>
+          </ol>
+
+        </nav>
+        <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none ">
+          <a href="javascript:;" class="nav-link p-0">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <div class="input-group">
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="Digite aqui">
+            </div>
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a href="../../pages/authentication/signin/illustration.html" class="nav-link text-white font-weight-bold px-0" target="_blank">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card">
+            <!-- Card header -->
+            <div class="card-header">
+              <div class="row">
+                <div class="col-12 d-flex justify-content-between">
+                    <div class="col-1 d-flex">
+                      <button type="button" class="btn w-100 mb-0" style="background-color: #172B4D; color: #fff; margin-right: 10px; white-space: nowrap;"><i class="fa fa-pencil" aria-hidden="true"></i>  &nbsp;Escrever</button>
+                        <button type="button" class="btn w-100 mb-0" style="background-color: #ebebeb; color: #8392AB;"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <button type="button" class="btn w-50 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button type="button" class="btn w-50 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                        <button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-reply" aria-hidden="true"></i> &nbsp;Encaminhar</button>
+                        <button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-calendar-times-o" aria-hidden="true"></i> &nbsp;Em Atraso</button>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            <div class="table-responsive">
+              <table class="table table-flush" id="datatable-basic">
+                <thead class="thead-light">
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NAME</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> </th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">DATA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Rosa Maria</td>
+                    <td class="text-sm font-weight-normal">Falta de energia - Hoje estamos sem energia o dia todo e ninguem respondeu o chamado desde as 7 horas da manha e nao tive retorn   </td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Bruno Maia</td>
+                    <td class="text-sm font-weight-normal">Conta paga - Cortaram minha luz sendo que eu ja tinha pago a conta, e não voltaram para fazer o religamento, ja liguei umas 5x e ning</td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">José Abreu</td>
+                    <td class="text-sm font-weight-normal">Corte de energia - Cortaram a energia do estabelecimento sendo que a conta tinha sido paga pela manha dessa sexta feira, como faço </td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Olivia Martins</td>
+                    <td class="text-sm font-weight-normal">Religação de energia - FIz a solicitação de religação de energia faz mais de 1 dia e não fizeram nada, me deram um prazo de 48 horas ..</td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Isabella Watson</td>
+                    <td class="text-sm font-weight-normal">Solicitação de analise de viabilização - Prezado desejo uma analise de projeto pra ligação de Edificio Comercial, segue anexo dos docu..</td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Brielle Williamson</td>
+                    <td class="text-sm font-weight-normal">Nova ligação - Gostaria de solicitar a ligaçao eletrica de uma residencia localizada no centro, gostaria de saber quais os documentos ne  </td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Ava Oliveira</td>
+                    <td class="text-sm font-weight-normal">Sem energia - Hoje passei o dia todo sem energia, liguei para resolver o problema e após horas ninguem veio resolver o probela de en</td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Lucas Rocha</td>
+                    <td class="text-sm font-weight-normal">Péssimo atendimento - Hoje liguei mais de 8 vezes e não fui atendido nem resolveram nada, apenas me deixaram falando com robo e </td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Juliana Almeida</td>
+                    <td class="text-sm font-weight-normal">Queda de energia - Estorou o transformador de um poste aqui no bairro e até o momento não foi arrumado, e nem deram prazo para </td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Sonya Frota</td>
+                    <td class="text-sm font-weight-normal">Equipamentos queimados  - moro em alto paraíso de Goiás,e tá muito difícil aqui todo dia falta </td>
+                    <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Jena Gaines</td>
+                    <td class="text-sm font-weight-normal">Office Manager</td>
+                    <td class="text-sm font-weight-normal">30</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Quinn Flynn</td>
+                    <td class="text-sm font-weight-normal">Support Lead</td>
+                    <td class="text-sm font-weight-normal">22</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Charde Marshall</td>
+                    <td class="text-sm font-weight-normal">Regional Director</td>
+                    <td class="text-sm font-weight-normal">36</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Haley Kennedy</td>
+                    <td class="text-sm font-weight-normal">Senior Marketing Designer</td>
+                    <td class="text-sm font-weight-normal">43</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Tatyana Fitzpatrick</td>
+                    <td class="text-sm font-weight-normal">Regional Director</td>
+                    <td class="text-sm font-weight-normal">19</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Michael Silva</td>
+                    <td class="text-sm font-weight-normal">Marketing Designer</td>
+                    <td class="text-sm font-weight-normal">66</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Paul Byrd</td>
+                    <td class="text-sm font-weight-normal">Chief Financial Officer (CFO)</td>
+                    <td class="text-sm font-weight-normal">64</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Gloria Little</td>
+                    <td class="text-sm font-weight-normal">Systems Administrator</td>
+                    <td class="text-sm font-weight-normal">59</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Bradley Greer</td>
+                    <td class="text-sm font-weight-normal">Software Engineer</td>
+                    <td class="text-sm font-weight-normal">41</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Dai Rios</td>
+                    <td class="text-sm font-weight-normal">Personnel Lead</td>
+                    <td class="text-sm font-weight-normal">35</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Jenette Caldwell</td>
+                    <td class="text-sm font-weight-normal">Development Lead</td>
+                    <td class="text-sm font-weight-normal">30</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Yuri Berry</td>
+                    <td class="text-sm font-weight-normal">Chief Marketing Officer (CMO)</td>
+                    <td class="text-sm font-weight-normal">40</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Caesar Vance</td>
+                    <td class="text-sm font-weight-normal">Pre-Sales Support</td>
+                    <td class="text-sm font-weight-normal">21</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Doris Wilder</td>
+                    <td class="text-sm font-weight-normal">Sales Assistant</td>
+                    <td class="text-sm font-weight-normal">23</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Angelica Ramos</td>
+                    <td class="text-sm font-weight-normal">Chief Executive Officer (CEO)</td>
+                    <td class="text-sm font-weight-normal">47</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Gavin Joyce</td>
+                    <td class="text-sm font-weight-normal">Developer</td>
+                    <td class="text-sm font-weight-normal">42</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Jennifer Chang</td>
+                    <td class="text-sm font-weight-normal">Regional Director</td>
+                    <td class="text-sm font-weight-normal">28</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Brenden Wagner</td>
+                    <td class="text-sm font-weight-normal">Software Engineer</td>
+                    <td class="text-sm font-weight-normal">28</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Fiona Green</td>
+                    <td class="text-sm font-weight-normal">Chief Operating Officer (COO)</td>
+                    <td class="text-sm font-weight-normal">48</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Shou Itou</td>
+                    <td class="text-sm font-weight-normal">Regional Marketing</td>
+                    <td class="text-sm font-weight-normal">20</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Michelle House</td>
+                    <td class="text-sm font-weight-normal">Integration Specialist</td>
+                    <td class="text-sm font-weight-normal">37</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Suki Burks</td>
+                    <td class="text-sm font-weight-normal">Developer</td>
+                    <td class="text-sm font-weight-normal">53</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Prescott Bartlett</td>
+                    <td class="text-sm font-weight-normal">Technical Author</td>
+                    <td class="text-sm font-weight-normal">27</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Gavin Cortez</td>
+                    <td class="text-sm font-weight-normal">Team Leader</td>
+                    <td class="text-sm font-weight-normal">22</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Martena Mccray</td>
+                    <td class="text-sm font-weight-normal">Post-Sales support</td>
+                    <td class="text-sm font-weight-normal">46</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Unity Butler</td>
+                    <td class="text-sm font-weight-normal">Marketing Designer</td>
+                    <td class="text-sm font-weight-normal">47</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Howard Hatfield</td>
+                    <td class="text-sm font-weight-normal">Office Manager</td>
+                    <td class="text-sm font-weight-normal">51</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Hope Fuentes</td>
+                    <td class="text-sm font-weight-normal">Secretary</td>
+                    <td class="text-sm font-weight-normal">41</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Vivian Harrell</td>
+                    <td class="text-sm font-weight-normal">Financial Controller</td>
+                    <td class="text-sm font-weight-normal">62</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Timothy Mooney</td>
+                    <td class="text-sm font-weight-normal">Office Manager</td>
+                    <td class="text-sm font-weight-normal">37</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Jackson Bradshaw</td>
+                    <td class="text-sm font-weight-normal">Director</td>
+                    <td class="text-sm font-weight-normal">65</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Olivia Liang</td>
+                    <td class="text-sm font-weight-normal">Support Engineer</td>
+                    <td class="text-sm font-weight-normal">64</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Bruno Nash</td>
+                    <td class="text-sm font-weight-normal">Software Engineer</td>
+                    <td class="text-sm font-weight-normal">38</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Sakura Yamamoto</td>
+                    <td class="text-sm font-weight-normal">Support Engineer</td>
+                    <td class="text-sm font-weight-normal">37</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Thor Walton</td>
+                    <td class="text-sm font-weight-normal">Developer</td>
+                    <td class="text-sm font-weight-normal">61</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Finn Camacho</td>
+                    <td class="text-sm font-weight-normal">Support Engineer</td>
+                    <td class="text-sm font-weight-normal">47</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Serge Baldwin</td>
+                    <td class="text-sm font-weight-normal">Data Coordinator</td>
+                    <td class="text-sm font-weight-normal">64</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Zenaida Frank</td>
+                    <td class="text-sm font-weight-normal">Software Engineer</td>
+                    <td class="text-sm font-weight-normal">63</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Zorita Serrano</td>
+                    <td class="text-sm font-weight-normal">Software Engineer</td>
+                    <td class="text-sm font-weight-normal">56</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Jennifer Acosta</td>
+                    <td class="text-sm font-weight-normal">Junior Javascript Developer</td>
+                    <td class="text-sm font-weight-normal">43</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Cara Stevens</td>
+                    <td class="text-sm font-weight-normal">Sales Assistant</td>
+                    <td class="text-sm font-weight-normal">46</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Hermione Butler</td>
+                    <td class="text-sm font-weight-normal">Regional Director</td>
+                    <td class="text-sm font-weight-normal">47</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Lael Greer</td>
+                    <td class="text-sm font-weight-normal">Systems Administrator</td>
+                    <td class="text-sm font-weight-normal">21</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Jonas Alexander</td>
+                    <td class="text-sm font-weight-normal">Developer</td>
+                    <td class="text-sm font-weight-normal">30</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Shad Decker</td>
+                    <td class="text-sm font-weight-normal">Regional Director</td>
+                    <td class="text-sm font-weight-normal">51</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Michael Bruce</td>
+                    <td class="text-sm font-weight-normal">Javascript Developer</td>
+                    <td class="text-sm font-weight-normal">29</td>
+                  </tr>
+                  <tr>
+                    <td class="text-sm font-weight-normal">Donna Snider</td>
+                    <td class="text-sm font-weight-normal">Customer Support</td>
+                    <td class="text-sm font-weight-normal">27</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--   Core JS Files   -->
+  <script src="../../assets/js/core/popper.min.js"></script>
+  <script src="../../assets/js/core/bootstrap.min.js"></script>
+  <script src="../../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../../assets/js/plugins/datatables.js"></script>
+  <!-- Kanban scripts -->
+  <script src="../../assets/js/plugins/dragula/dragula.min.js"></script>
+  <script src="../../assets/js/plugins/jkanban/jkanban.js"></script>
+  <script>
+    const dataTableBasic = new simpleDatatables.DataTable("#datatable-basic", {
+      searchable: false,
+      fixedHeight: true
+    });
+
+    const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
+      searchable: true,
+      fixedHeight: true
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../../assets/js/argon-dashboard.min.js?v=2.0.5"></script>
+</body>
+
+</html>
