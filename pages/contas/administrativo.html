@@ -225,7 +225,8 @@
                 <thead class="thead-light p-2">
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NAME</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> </th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID </th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">EMAIL </th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">SETOR</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> </th>
                   </tr>
@@ -233,6 +234,7 @@
                 <tbody>
                   <tr>
                     <td class="text-sm font-weight-normal">administrador</td>
+                    <td class="text-sm font-weight-normal">adm123</td>
                     <td class="text-sm font-weight-normal">admwize@gmail.com.br </td>
                     <td class="text-sm font-weight-normal">administrador</td>
                     <td><button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB;"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -240,6 +242,7 @@
                 </tr>
                   <tr>
                     <td class="text-sm font-weight-normal">Bruno Maia</td>
+                    <td class="text-sm font-weight-normal">emrg123</td>
                     <td class="text-sm font-weight-normal">emergencia@gmail.com.br</td>
                     <td class="text-sm font-weight-normal">emergencial</td>
                     <td><button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB;"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -247,6 +250,7 @@
                   </tr>
                   <tr>
                     <td class="text-sm font-weight-normal">José Abreu</td>
+                    <td class="text-sm font-weight-normal">urge258</td>
                     <td class="text-sm font-weight-normal">urgente@gmail.com.br</td>
                     <td class="text-sm font-weight-normal">urgente</td>
                     <td><button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB;"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -278,6 +282,9 @@
                   <form role="form">
                     <div class="mb-3">
                       <input type="text" class="form-control" id="name" placeholder="Nome" aria-label="Name">
+                    </div>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="ident" placeholder="ID" aria-label="Name">
                     </div>
                     <div class="mb-3">
                       <input type="email" class="form-control" id="email" placeholder="Email" aria-label="Email">
@@ -347,6 +354,7 @@
 });
 
 const name = document.getElementById('name')
+const ident = document.getElementById('ident')
 const email = document.getElementById('email')
 const setor = document.getElementById('setor')
 const senha = document.getElementById('senha')
@@ -359,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function verificar() {
-  if (name.value !== "" || email.value !== "" || setor.value !== "" || senha.value !== "") {
+  if (name.value !== "" || ident.value !== "" || email.value !== "" || setor.value !== "" || senha.value !== "") {
     validarCampos();
   } else {
     alert("Preencha todos os campos");
@@ -371,6 +379,7 @@ function verificar() {
     listaUser.push(
       {
       nameCad: name.value,
+      idCad: ident.value,
       emailCad:email.value,
       setorCad: setor.value,
       senhaCad: senha.value
@@ -386,6 +395,9 @@ localStorage.setItem('listaUser', JSON.stringify(listaUser))
 function validarCampos() {
   switch(true) {
     case name.value === "":
+      alert('Preencha seu nome');
+      break;
+    case ident.value === "":
       alert('Preencha seu nome');
       break;
     case email.value === "":
