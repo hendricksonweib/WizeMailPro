@@ -256,6 +256,7 @@
     <div class="container ">
       <div class="floating-container col-12" id="floatingForm">
         <div class="card z-index-0 mt-12">
+          
         </div>
         <div class="container">
           <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
@@ -263,6 +264,7 @@
               <div class="card z-index-0">
                 <div class="card-header text-center pt-4">
                   <h5>Cadastrar usuário</h5>
+                  <button id="closeButton" class="btn btn-close" aria-label="Close">x</button>
                 </div>
                 <div class="card-body">
                   <form role="form">
@@ -308,9 +310,9 @@
     });
   </script>
   <script>
-    var win = navigator.platform.indexOf('Win') > -1;
+    const win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
+      const options = {
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
@@ -318,17 +320,20 @@
 
     document.addEventListener("DOMContentLoaded", function() {
     
-    var addButton = document.querySelector("#addButton");
-
-    // Seleciona o contêiner flutuante
-    var floatingForm = document.querySelector("#floatingForm");
-
-    // Adiciona um evento de clique ao botão "Adicionar"
+    const addButton = document.querySelector("#addButton");
+    const floatingForm = document.querySelector("#floatingForm");
     addButton.addEventListener("click", function() {
-      // Mostra o contêiner flutuante
       floatingForm.style.display = "block";
     });
   });
+  document.addEventListener("DOMContentLoaded", function() {
+    const closeButton = document.getElementById("closeButton");
+
+    closeButton.addEventListener("click", function() {
+
+      floatingForm.style.display = "none";
+    });
+});
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
