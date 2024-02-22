@@ -34,7 +34,7 @@
                     <div class="card-body">
                       <form role="form" class="text-start">
                         <div class="mb-4">
-                          <input type="email" class="form-control" placeholder="Insira seu ID de rede" aria-label="Email">
+                          <input type="text" id="ident" class="form-control" placeholder="Insira seu ID de rede" aria-label="text">
                         </div>
                         <div class="mb-3">
                           <input type="password" class="form-control" placeholder="Digite sua senha" aria-label="Password">
@@ -84,7 +84,43 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
 
+    const id = document.getElementById('ident')
+    const senha = document.getElementById('senha')
+    const login = document.getElementById('entrar')
     
+    
+    document.addEventListener('DOMContentLoaded', function(){
+      login.addEventListener('click',function(){
+        
+        let listaUser = []
+        let userValid = {
+      name:'',
+      id:'',
+      senha:'' 
+    }
+    
+    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+
+    listaUser.forEach((item) => {
+      if (ident.value == item.idCad && senha.value == item.senhaCad) {
+        userValid = {
+          ident: item.idCad,
+          senha: item.senhaCad
+        }
+      }
+    })
+console.log(userValid)
+    if(ident.value == userValid.ident && senha.value == userValid.senha){
+      window.location.href = 'http://127.0.0.1:5501/pages/home/home.html'
+      let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
+      localStorage.setItem('token', token)
+      localStorage.setItem('userLogado', JSON.stringify(userValid))
+    }else {
+      alert('acesso negado')
+     
+    }
+  })
+})
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
