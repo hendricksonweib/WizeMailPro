@@ -213,7 +213,7 @@
               <div class="row">
                 <div class="col-12 d-flex justify-content-between">
                     <div class="col-1 d-flex">
-                      <button type="button" class="btn w-100 mb-0" style="background-color: #172B4D; color: #fff; margin-right: 10px; white-space: nowrap;"><i class="fa fa-pencil" aria-hidden="true"></i>  &nbsp;Escrever</button>
+                      <button type="button" class="btn w-100 mb-0" id="btnEscrever" style="background-color: #172B4D; color: #fff; margin-right: 10px; white-space: nowrap;"><i class="fa fa-pencil" aria-hidden="true"></i>  &nbsp;Escrever</button>
                         <button type="button" class="btn w-100 mb-0" style="background-color: #ebebeb; color: #8392AB;"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                     </div>
                     <div class="col-4 d-flex justify-content-end">
@@ -550,6 +550,13 @@
     });
   </script>
   <script>
+    const btnEscrever = document.getElementById("btnEscrever")
+
+    btnEscrever.addEventListener('click', function(){
+      window.location.href='http://127.0.0.1:5501/pages/escrever/email.html'
+    })
+
+
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
