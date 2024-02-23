@@ -18,11 +18,11 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../../../assets/css/argon-dashboard.css?v=2.0.5" rel="stylesheet" />
 </head>
-
 <body class="">
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-100">
+        
         <div class="container">
           <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto p-4">
@@ -32,25 +32,31 @@
                       <h5 class="mb-0 mt-4 font-weight-bold"><strong>Acesso a área restrita</strong></h5>
                     </div>
                     <div class="card-body">
+                      <div class="alert alert-danger" role="alert" id="alertCampos" style="display: none; color: #ffffff;">
+                        Por favor <strong>preencha todos os campos!</strong> 
+                    </div>
+                      <div class="alert alert-danger" role="alert" id="alertCampos2" style="display: none; color: #ffffff;">
+                        Acesso <strong>negado!</strong> 
+                    </div>
                       <form role="form" class="text-start">
                         <div class="mb-4">
-                          <input type="text" id="ident" class="form-control" placeholder="Insira seu ID de rede" aria-label="text">
+                          <input type="text" id="ident" class="form-control" placeholder="Insira seu ID de rede" aria-label="ident">
                         </div>
                         <div class="mb-3">
-                          <input type="password" class="form-control" placeholder="Digite sua senha" aria-label="Password">
+                          <input type="password" id="senha" class="form-control" placeholder="Digite sua senha" aria-label="Password">
                         </div>
                         <div class="form-check form-switch d-flex justify-content-center">
                             <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                             <label class="form-check-label" for="rememberMe">Lembrar</label>
                         </div>                        
                         <div class="text-center">
-                            <a href="../home/home.html"><button type="button" class="btn w-100 mt-4 mb-0" style="background-color: #093576; color: #fff;">Entrar</button></a>
+                          <button type="button" id="entrar" class="btn w-100 mt-4 mb-0" style="background-color: #093576; color: #fff;">Entrar</button>
                         </div>
                       </form>
                     </div>
                     <div class="card-footer pt-0 px-lg-4 px-1">
                       <p class="mb-4 text-sm mx-auto">
-                        <a href="../login/login.html" class="text-primary font-weight-bold">Entrar com usuário de rede?</a>
+                        <a href="../login/loginID.html" class="text-primary font-weight-bold">Entrar com usuário?</a>
                       </p>
                     </div>
                   </div>
@@ -84,43 +90,56 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
 
-    const id = document.getElementById('ident')
+    const ident = document.getElementById('ident')
     const senha = document.getElementById('senha')
     const login = document.getElementById('entrar')
-    
+    const alertbtn = document.getElementById('alertCampos')
+    const alertbtn2 = document.getElementById('alertCampos2')  
     
     document.addEventListener('DOMContentLoaded', function(){
       login.addEventListener('click',function(){
-        
+       if( ident.value === '' || senha.value === ''){
+        alertbtn.style.display = 'block'
+        setTimeout(function() {
+        alertbtn.style.display = 'none';
+      }, 3000);
+        return
+       }
         let listaUser = []
         let userValid = {
       name:'',
-      id:'',
+      ident:'',
       senha:'' 
     }
     
     listaUser = JSON.parse(localStorage.getItem('listaUser'))
 
     listaUser.forEach((item) => {
-      if (ident.value == item.idCad && senha.value == item.senhaCad) {
+      if (email.value == item.identCad && senha.value == item.senhaCad) {
         userValid = {
-          ident: item.idCad,
+          ident: item.identCad,
           senha: item.senhaCad
         }
       }
     })
 console.log(userValid)
-    if(ident.value == userValid.ident && senha.value == userValid.senha){
+    if(email.value === userValid.email && senha.value === userValid.senha){
       window.location.href = 'http://127.0.0.1:5501/pages/home/home.html'
       let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
       localStorage.setItem('token', token)
       localStorage.setItem('userLogado', JSON.stringify(userValid))
     }else {
-      alert('acesso negado')
-     
+      alertbtn2.style.display = 'block'
+
+      setTimeout(function() {
+        alertbtn2.style.display = 'none';
+      }, 3000);
+        return
     }
   })
 })
+
+
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

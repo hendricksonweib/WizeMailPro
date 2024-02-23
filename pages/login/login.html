@@ -22,6 +22,7 @@
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-100">
+        
         <div class="container">
           <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto p-4">
@@ -31,6 +32,12 @@
                       <h5 class="mb-0 mt-4 font-weight-bold"><strong>Acesso a área restrita</strong></h5>
                     </div>
                     <div class="card-body">
+                      <div class="alert alert-danger" role="alert" id="alertCampos" style="display: none; color: #ffffff;">
+                        Por favor <strong>preencha todos os campos!</strong> 
+                    </div>
+                      <div class="alert alert-danger" role="alert" id="alertCampos2" style="display: none; color: #ffffff;">
+                        Acesso <strong>negado!</strong> 
+                    </div>
                       <form role="form" class="text-start">
                         <div class="mb-4">
                           <input type="email" id="email" class="form-control" placeholder="Insira seu usuário de rede" aria-label="Email">
@@ -86,16 +93,23 @@
     const email = document.getElementById('email')
     const senha = document.getElementById('senha')
     const login = document.getElementById('entrar')
-    
+    const alertbtn = document.getElementById('alertCampos')
+    const alertbtn2 = document.getElementById('alertCampos2')  
     
     document.addEventListener('DOMContentLoaded', function(){
       login.addEventListener('click',function(){
-        
+       if( email.value === '' || senha.value === ''){
+        alertbtn.style.display = 'block'
+        setTimeout(function() {
+        alertbtn.style.display = 'none';
+      }, 3000);
+        return
+       }
         let listaUser = []
         let userValid = {
-      name:'',
-      email:'',
-      senha:'' 
+          user :'',
+          email:'',
+          senha:'' 
     }
     
     listaUser = JSON.parse(localStorage.getItem('listaUser'))
@@ -103,20 +117,25 @@
     listaUser.forEach((item) => {
       if (email.value == item.emailCad && senha.value == item.senhaCad) {
         userValid = {
+          user : item.nameCad,
           email: item.emailCad,
           senha: item.senhaCad
         }
       }
     })
 console.log(userValid)
-    if(email.value == userValid.email && senha.value == userValid.senha){
+    if(email.value === userValid.email && senha.value === userValid.senha){
       window.location.href = 'http://127.0.0.1:5501/pages/home/home.html'
       let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
       localStorage.setItem('token', token)
       localStorage.setItem('userLogado', JSON.stringify(userValid))
     }else {
-      alert('acesso negado')
-     
+      alertbtn2.style.display = 'block'
+
+      setTimeout(function() {
+        alertbtn2.style.display = 'none';
+      }, 3000);
+        return
     }
   })
 })
