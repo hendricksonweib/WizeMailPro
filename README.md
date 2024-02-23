@@ -8,7 +8,7 @@
 [![GitHub Forks](https://img.shields.io/github/forks/seu-usuario/seu-projeto.svg)](https://github.com/hendricksonweib/teoriaDasFilas/network)
 
 ## 📖 Sumário
-
+- [Prototipo no figma](#Figma)
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
 - [Contribuição](#contribuição)
@@ -16,6 +16,7 @@
 
 
 ## ✏️ Figma
+![Descrição da imagem](https://www.figma.com/file/zvFIgTYMpaz9TxOXQHw6Ug/WISE-MAIL-PRO?type=design&node-id=2%3A21040&mode=dev&t=yZksfQeCM0IkbTMt-1)
 - [Prototipo no figma](https://www.figma.com/file/zvFIgTYMpaz9TxOXQHw6Ug/WISE-MAIL-PRO?type=design&node-id=2-21040&mode=design&t=HqzPNPh1hsb4So5D-0)
 
 ## 🚀 Instalação
