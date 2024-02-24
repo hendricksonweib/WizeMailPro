@@ -235,8 +235,8 @@
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">DATA</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody id="boxEmail" style="height: 500px;">
+                  <!-- <tr>
                     <td class="text-sm font-weight-normal">Rosa Maria</td>
                     <td class="text-sm font-weight-normal">Falta de energia - Hoje estamos sem energia o dia todo e ninguem respondeu o chamado desde as 7 horas da manha e nao tive retorn   </td>
                     <td class="text-sm font-weight-normal">2011/04/25 08:33</td>
@@ -520,7 +520,7 @@
                     <td class="text-sm font-weight-normal">Donna Snider</td>
                     <td class="text-sm font-weight-normal">Customer Support</td>
                     <td class="text-sm font-weight-normal">27</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -568,9 +568,48 @@
     }
     const user = JSON.parse(localStorage.getItem('userLogado'))
     let logado = document.getElementById('logado')
-
-    console.log(user)
+    const boxEmail = document.getElementById('boxEmail')
     logado.innerHTML = ` Olá, ${user.email}`
+
+    const url = 'https://jsonplaceholder.typicode.com/posts'
+    const urlUser = 'https://api.invertexto.com/v1/faker?token=6722%7CkqiP9BRaQn6fybqudqp2N8AiSNWTeOej&fields=name%2Cemail%2Cpassword%2Cdomain_name&locale=BRASIL'
+
+    async function getAllEmails(){
+      const response = await fetch(url)
+      const responseUser = await fetch(urlUser)
+        console.log(responseUser)
+
+      const data = await response.json()
+      console.log(data)
+      data.map((emails) => {
+    const tr = document.createElement('tr')
+    const body = document.createElement('td')
+    const id = document.createElement('td')
+    const title = document.createElement('td')
+    const dataAPI = document.createElement('td')
+
+    id.innerText = emails.id
+    body.innerText = emails.body
+    title.innerText = emails.title
+    // dataAPI.innerText = 'data'
+    // dataAPI.setAttribute('href', `/post.html?id=${emails.id}`)
+
+    tr.appendChild(id)
+    tr.appendChild(title)
+    tr.appendChild(dataAPI)
+
+    tr.addEventListener('click', () => {
+        alert('Clicou!')
+        setAttribute('href', `/post.html?id=${emails.id}`)
+    })
+
+    boxEmail.appendChild(tr)
+})
+
+    }
+
+getAllEmails()
+
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

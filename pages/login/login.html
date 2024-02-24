@@ -125,7 +125,7 @@
     })
 console.log(userValid)
     if(email.value === userValid.email && senha.value === userValid.senha){
-      window.location.href = 'http://127.0.0.1:5501/pages/home/home.html'
+      window.location.href = 'http://127.0.0.1:5502/pages/home/home.html'
       let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
       localStorage.setItem('token', token)
       localStorage.setItem('userLogado', JSON.stringify(userValid))
