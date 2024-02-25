@@ -591,16 +591,15 @@
     id.innerText = emails.id
     body.innerText = emails.body
     title.innerText = emails.title
-    // dataAPI.innerText = 'data'
-    // dataAPI.setAttribute('href', `/post.html?id=${emails.id}`)
+    dataAPI.innerText = 'data'
+    dataAPI.innerText = 'data'
 
     tr.appendChild(id)
     tr.appendChild(title)
     tr.appendChild(dataAPI)
 
     tr.addEventListener('click', () => {
-        alert('Clicou!')
-        setAttribute('href', `/post.html?id=${emails.id}`)
+       window.location.href = `/post.html?id=${emails.id}`
     })
 
     boxEmail.appendChild(tr)
