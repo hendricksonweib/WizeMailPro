@@ -77,7 +77,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link active" aria-controls="applicationsExamples" role="button" aria-expanded="false">
+          <a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link " aria-controls="applicationsExamples" role="button" aria-expanded="false">
             <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
               <i class="ni ni-ui-04 text-info text-sm opacity-10"></i>
             </div>
@@ -139,7 +139,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a href="../contas/administrativo.html" class="nav-link " aria-controls="authExamples" role="button" aria-expanded="false">
+          <a href="../contas/administrativo.html" class="nav-link active" aria-controls="authExamples" role="button" aria-expanded="false">
             <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
               <i class="fa fa-share" style="font-size:15px;color:rgb(0, 0, 0)"></i>      
             </div>
@@ -159,7 +159,7 @@
                 <i class="ni ni-box-2"></i>
               </a>
             </li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Caixa de entrada</li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Painel administrativo</li>
           </ol>
 
         </nav>
@@ -183,7 +183,7 @@
             <li class="nav-item d-flex align-items-center">
               <a href="../../pages/authentication/signin/illustration.html" class="nav-link text-white font-weight-bold px-0" target="_blank">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
+                <span class="d-sm-inline d-none" id="logado">Sign In</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -208,6 +208,9 @@
     <div class="container-fluid py-4">
       <div class="row mt-4">
         <div class="col-12">
+          <div class="alert alert-success" role="alert" id="alertCampos" style="color: #fff; display: none;">
+            <strong>Cadastrado</strong> com sucesso!
+        </div>
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
@@ -231,8 +234,8 @@
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody id="box-usuarios">
+                  <!-- <tr>
                     <td class="text-sm font-weight-normal">administrador</td>
                     <td class="text-sm font-weight-normal">adm123</td>
                     <td class="text-sm font-weight-normal">admwize@gmail.com.br </td>
@@ -255,7 +258,7 @@
                     <td class="text-sm font-weight-normal">urgente</td>
                     <td><button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB;"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                     </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -279,6 +282,24 @@
                   </div>
                 </div>
                 <div class="card-body">
+                  <div class="alert alert-danger" role="alert" id="alertTodosCampos" style="display: none; color: #ffffff;">
+                    Por favor <strong>Preencha todos os campos!</strong> 
+                </div>
+                  <div class="alert alert-danger" role="alert" id="alertCamposNome" style="display: none; color: #ffffff;">
+                    Por favor <strong>Preencha seu nome!</strong> 
+                </div>
+                  <div class="alert alert-danger" role="alert" id="alertCamposID" style="display: none; color: #ffffff;">
+                    Por favor <strong>Preencha seu ID!</strong> 
+                </div>
+                  <div class="alert alert-danger" role="alert" id="alertCamposEmail" style="display: none; color: #ffffff;">
+                    Por favor <strong>Preencha seu email!</strong> 
+                </div>
+                  <div class="alert alert-danger" role="alert" id="alertCamposSetor" style="display: none; color: #ffffff;">
+                    Por favor <strong>Preencha seu setor!</strong> 
+                </div>
+                  <div class="alert alert-danger" role="alert" id="alertCamposSenha" style="display: none; color: #ffffff;">
+                    Por favor <strong>Preencha sua senha!</strong> 
+                </div>
                   <form role="form">
                     <div class="mb-3">
                       <input type="text" class="form-control" id="name" placeholder="Nome" aria-label="Name">
@@ -359,6 +380,18 @@ const email = document.getElementById('email')
 const setor = document.getElementById('setor')
 const senha = document.getElementById('senha')
 const cadastrar = document.getElementById('cadastrar')
+const alertbtn = document.getElementById('alertCampos')
+const alertCamposNome = document.getElementById('alertCamposNome')
+const alertalCamposID = document.getElementById('alertCamposID')
+const alertCamposEmail = document.getElementById('alertCamposEmail')
+const alertCamposSetor = document.getElementById('alertCamposSetor')
+const alertCamposSenha = document.getElementById('alertCamposSenha')
+const alertTodosCampos = document.getElementById('alertTodosCampos')
+const boxUsuarios = document.getElementById('box-usuarios')
+
+const user = JSON.parse(localStorage.getItem('userLogado'))
+let logado = document.getElementById('logado')
+    logado.innerHTML = ` Olá, ${user.email}`
 
 document.addEventListener('DOMContentLoaded', function(){
   cadastrar.addEventListener('click',function(){
@@ -370,7 +403,10 @@ function verificar() {
   if (name.value !== "" || ident.value !== "" || email.value !== "" || setor.value !== "" || senha.value !== "") {
     validarCampos();
   } else {
-    alert("Preencha todos os campos");
+    alertTodosCampos.style.display='block'
+    setTimeout(function(){
+      alertTodosCampos.style.display='none'
+    },2000)
   }
   if (name.value !== "" && email.value !== "" && setor.value !== "" && senha.value !== "") {
     floatingForm.style.display = "none";
@@ -386,28 +422,86 @@ function verificar() {
     }
     )
 localStorage.setItem('listaUser', JSON.stringify(listaUser))
-
-    alert('cadastrado com sucesso')
+    alertbtn.style.display='block'
+    setTimeout(function(){
+      alertbtn.style.display='none'
+    },3000)
+    return
 
   }
 }
 
+const userRegister = JSON.parse(localStorage.getItem('listaUser'));
+
+function getAllUsers() {
+    const boxUsuarios = document.getElementById('box-usuarios');
+
+    userRegister.forEach((usuario) => {
+        const tr = document.createElement('tr');
+
+        const nameTd = document.createElement('td');
+        nameTd.innerText = usuario.nameCad;
+        tr.appendChild(nameTd);
+
+        const idTd = document.createElement('td');
+        idTd.innerText = usuario.idCad;
+        tr.appendChild(idTd);
+
+        const emailTd = document.createElement('td');
+        emailTd.innerText = usuario.emailCad;
+        tr.appendChild(emailTd);
+
+        const setorTd = document.createElement('td');
+        setorTd.innerText = usuario.setorCad;
+        tr.appendChild(setorTd);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>'; 
+        deleteButton.addEventListener('click', () => {
+            tr.remove(); 
+        });
+        const deleteTd = document.createElement('td');
+        deleteTd.appendChild(deleteButton);
+        tr.appendChild(deleteTd);
+
+        boxUsuarios.appendChild(tr);
+    });
+}
+
+getAllUsers();
+
+
 function validarCampos() {
   switch(true) {
     case name.value === "":
-      alert('Preencha seu nome');
+    alertCamposNome.style.display='block'
+    setTimeout(function(){
+      alertCamposNome.style.display='none'
+    },1000)
       break;
     case ident.value === "":
-      alert('Preencha seu nome');
+    alertalCamposID.style.display='block'
+    setTimeout(function(){
+      alertalCamposID.style.display='none'
+    },1000)
       break;
     case email.value === "":
-      alert('Preencha seu email');
+    alertCamposEmail.style.display='block'
+    setTimeout(function(){
+      alertCamposEmail.style.display='none'
+    },1000)
       break;
     case setor.value === "":
-      alert('Preencha seu setor');
-      break;
+    alertCamposSetor.style.display='block'
+    setTimeout(function(){
+      alertCamposSetor.style.display='none'
+    },1000)     
+     break;
     case senha.value === "":
-      alert('Preencha sua senha');
+    alertCamposSenha.style.display='block'
+    setTimeout(function(){
+      alertCamposSenha.style.display='none'
+    },1000)
       break;
     default:
       break;
