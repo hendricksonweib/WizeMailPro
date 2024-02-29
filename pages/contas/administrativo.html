@@ -424,6 +424,7 @@ function verificar() {
 localStorage.setItem('listaUser', JSON.stringify(listaUser))
     alertbtn.style.display='block'
     setTimeout(function(){
+      location.reload();
       alertbtn.style.display='none'
     },3000)
     return
