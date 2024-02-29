@@ -213,24 +213,26 @@
               <div class="row">
                 <div class="col-12 d-flex justify-content-between">
                     <div class="col-1 d-flex">
-                      <button type="button" class="btn w-100 mb-0" id="btnBack" style="background-color: #ebebeb; color: #8392AB; margin-right: 10px; white-space: nowrap;"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
-                        <button type="button" class="btn w-100 mb-0" style="background-color: #ebebeb; color: #8392AB; margin-right: 10px;"><i class="fa fa-tag" aria-hidden="true"></i></button>
-                        <button type="button" class="btn w-100 mb-0"  style="background-color: #ebebeb; color: #8392AB; margin-right: 10px;"><i class="fa fa-reply" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-secondary" id="btnBack" style="margin-right: 10px;"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-secondary" style="margin-right: 10px;"><i class="fa fa-tag" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-secondary" style="margin-right: 10px;"><i class="fa fa-calendar-times-o" aria-hidden="true" aria-hidden="true"></i></button>
                     </div>
-                    <div class="col-1 d-flex justify-content-end">
-                        <button type="button" class="btn w-50 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        <button type="button" class="btn w-50 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-calendar" aria-hidden="true"></i></button>
-                        <button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-reply" aria-hidden="true"></i></button>
-                        <button type="button" class="btn w-100 mb-0" style="background-color: transparent; color: #8392AB; margin-right: 10px;"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></button>
+                    <div >
+                      <button type="button" class="btn btn-primary btn-lg">Enviar</button>
                     </div>
                 </div>
               </div> 
             </div>
-            <div class="row  pt-0 p-4">
-              <h4><strong>Não estou recebendo nenhuma fatura</strong> <span style="font-size: 17px; opacity: 0.6;">Caixa de entrada</span></h4>
-            </div>
-            <div>
-              <textarea class="col-12" name="email-mensagem" id="mensagem" cols="184" rows="10" style="border: none; outline-style: none; padding: 1%; height: 600px;"></textarea>
+            <div class="row  pt-0 p-4">     
+              <input type="email" id="email" class="form-control" placeholder="Destinatários" aria-label="Email">
+              <div>
+            <div class="row mt-0 pt-0 p-0">     
+              <input type="text" id="assunto" class="form-control" placeholder="Assunto" aria-label="assunto">
+              <div>
+                <textarea class="col-12" name="email-mensagem" id="mensagem" cols="184" rows="10" style="border: none; outline-style: none; padding: 1%; height: 600px;"></textarea>
+                <div class="mb-4 col-2">
+                  <input class="form-control form-control-sm" id="formFileSm" type="file">
+                </div>
             </div>
           </div>
         </div>
@@ -246,7 +248,7 @@
   <script>
   const btnBack = document.getElementById('btnBack')
   btnBack.addEventListener('click', function(){
-    window.location.href ='http://127.0.0.1:5501/pages/home/home.html'
+    window.location.href ='http://127.0.0.1:5502/pages/home/home.html'
   })
 
     const dataTableBasic = new simpleDatatables.DataTable("#datatable-basic", {
