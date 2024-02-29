@@ -48,7 +48,7 @@
         <div class="collapse " id="pagesExamples">
           <ul class="nav ms-4">
             <li class="nav-item ">
-              <a class="nav-link " href="../home/home.html">
+              <a class="nav-link active" href="../home/home.html">
                 <span class="sidenav-normal"> Caixa de entrada </span>
               </a>
             </li>
@@ -196,7 +196,7 @@
             </li>
             <li class="nav-item px-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                <i class="fa fa-sign-out" style="font-size:25px; color:rgb(255, 255, 255)" id="logout"></i>
               </a>
             </li>
           </ul>
@@ -266,6 +266,12 @@
   </script>
   <script>
     const btnEscrever = document.getElementById("btnEscrever")
+    const logout = document.getElementById('logout')
+   
+    logout.addEventListener('click', function(){
+      window.location.href='http://127.0.0.1:5502/pages/authentication/login.html'
+    })
+
 
     btnEscrever.addEventListener('click', function(){
       window.location.href='http://127.0.0.1:5502/pages/chat/email.html'

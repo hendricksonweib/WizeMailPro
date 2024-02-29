@@ -459,7 +459,7 @@ function getAllUsers() {
         const deleteButton = document.createElement('button');
         deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>'; 
         deleteButton.addEventListener('click', () => {
-         
+          removeUserFromLocalStorage(usuario.idCad)
 
             tr.remove(); 
         });
@@ -469,6 +469,11 @@ function getAllUsers() {
 
         boxUsuarios.appendChild(tr);
     });
+}
+function removeUserFromLocalStorage(userId) {
+
+    const updatedUserRegister = userRegister.filter(user => user.idCad !== userId);
+    localStorage.setItem('listaUser', JSON.stringify(updatedUserRegister));
 }
 
 getAllUsers();
